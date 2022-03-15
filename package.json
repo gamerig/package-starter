@@ -15,9 +15,6 @@
     "build": "rollup -c",
     "format": "prettier --write 'src/**/*.ts'",
     "lint": "eslint 'src/**/*.ts'",
-    "prepublish:npm": "npm run build",
-    "publish:npm": "npm publish --access public",
-    "prerelease": "npm run build",
     "release": "release-it"
   },
   "repository": {
@@ -59,5 +56,8 @@
     "rollup-plugin-terser": "^7.0.2",
     "tslib": "^2.3.1",
     "typescript": "^4.6.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
