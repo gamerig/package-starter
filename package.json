@@ -6,22 +6,30 @@
   "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
   "types": "dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
     "test": "echo \"Error: no test specified\"",
     "dev": "rollup -c -w",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint --ext .ts .",
+    "prepare": "npm run build",
+    "prepublishOnly" : "npm test && npm run lint",
+    "preversion" : "npm run lint",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gamerig/package-starter.git"
   },
   "keywords": [
-    "game",
-    "engine",
-    "core",
-    "webgl",
+    "typescript",
+    "rollup",
     "package",
-    "starter"
+    "starter",
+    "publishing",
+    "npm"
   ],
   "author": "n3vrax@gmail.com",
   "license": "MIT",
