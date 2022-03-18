@@ -8,7 +8,6 @@ This is a utility package to help you start writing typescript libraries faster.
 - remove `.git` folder and initialize git with your own remote repo
 - edit `package.json` to match the library info you are building
 - start writing the code in `src` dir
-- it is recommended to remove package-lock.json from `.gitignore`
 
 ## Building
 
@@ -17,12 +16,12 @@ This is a utility package to help you start writing typescript libraries faster.
 - by default the output is in `dist` folder
 - typescript declaration files are also generated and bundles into a single `index.d.ts` file
 
-## Publishing
+## Releasing
 
 When you are ready to push it to npm repository, just follow the regular guidelines to publish it
+The package has release-it installed to help with versioning and publishing
 
-- double check `package.json` for version number and package name, to match your npm repository
-- login to npm `npm login`
-- `npm publish --access public`
+- change `.release-it.json` config to suit your needs
+- run `npm run release` and answer the questions or run it in a CI env
 
 _Note_: we recommend using VS Code, it is already setup to use the eslint and prettier rules and formatters
